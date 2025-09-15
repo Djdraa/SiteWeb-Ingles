@@ -1,0 +1,152 @@
+/* -------------------- */
+/* 🔄 RESET BÁSICO      */
+/* -------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------- */
+/* 🎨 TIPOGRAFÍA Y FONDO */
+/* -------------------- */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #e0f7fa 0%, #ffe0b2 100%);
+}
+
+/* -------------------- */
+/* 🌟 HEADER CON EFECTO */
+/* -------------------- */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 2.5rem;
+  color: #fff;
+  background: radial-gradient(circle at center, #0091ea, #01579b);
+  text-shadow:
+    0 0 5px rgba(255,255,255,0.8),
+    0 0 10px rgba(0,150,255,0.6),
+    0 0 20px rgba(0,150,255,0.4);
+}
+
+/* -------------------- */
+/* 📦 SECCIONES TARJETAS */
+/* -------------------- */
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255,255,255,0.8);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+section:hover {
+  transform: translateY(-5px);
+}
+
+/* -------------------- */
+/* ✏️ TÍTULOS SECCIONES */
+/* -------------------- */
+section h2 {
+  font-size: 1.75rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -5px;
+  width: 0; height: 4px;
+  background: #0091ea;
+  transition: width 0.4s ease;
+}
+section h2:hover::after {
+  width: 100%;
+}
+
+/* -------------------- */
+/* 📐 GRID DE ACTIVIDADES */
+/* -------------------- */
+.actividades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* -------------------- */
+/* 🃏 TARJETAS DE EVIDENCIA */
+/* -------------------- */
+.card {
+  background: #fff;
+  border-radius: .75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.card img {
+  width: 100%;
+  display: block;
+}
+.card .info {
+  padding: 1rem;
+  text-align: center;
+}
+.card .info h3 {
+  margin-bottom: .5rem;
+  font-size: 1.1rem;
+}
+
+/* -------------------- */
+/* 🔘 BOTONES ENLACES   */
+/* -------------------- */
+.btn {
+  display: inline-block;
+  margin-top: .75rem;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .5rem;
+  background: #01579b;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #004c8c;
+}
+
+/* -------------------- */
+/* 🖼️ MODAL PARA IMÁGENES */
+/* -------------------- */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: .5rem;
+}
